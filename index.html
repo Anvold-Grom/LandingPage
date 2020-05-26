@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyRabbit</title>
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>HappyRabbit</span>
+        </div>
+        <div id="about">
+            <a href="#" title="Описание" onclick="slowScroll('#main')">Описание</a>
+            <a href="#" onclick="slowScroll('#overview')">Преимущества</a>
+            <a href="#" onclick="slowScroll('#contacts')">Контакты</a>
+            <a href="#" onclick="slowScroll('#faq')">Вопросы</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Свежайшие изделия из кролика</h1>
+        <h3>к вашему столу!</h3>
+    </div>
+
+    <div id="main">
+        <div class="intro">
+            <h2>Доставляем по всему Минску!</h2>
+            <span>Только свежие продукты</span>
+        </div>
+        <div class="text">
+            <span>На выбор вам предлогаются: колбасы, консервы, фарш, цельная тушка, разделанная тушка, печень а также кроли на племя</span>
+        </div>
+    </div>
+
+    <div id="overview">
+
+        <h2>Почему нужно выбрать нас</h2>
+        <h4>с нами проще</h4>
+
+        <div class="img">
+            <img src="https://sakurashop.ru/uploads/thing/10d/303cd-1512008570_665x550.jpeg" alt="">
+            <span>Забой в день заказа</span>
+        </div>
+        <div class="img">
+            <img src="https://st.depositphotos.com/1326558/4157/i/450/depositphotos_41570023-stock-photo-fresh-raw-sausage.jpg" alt="">
+            <span>Делаем с любовью</span>
+        </div>
+    </div>
+
+    <div id="contacts">
+        <center><h5>Обратная связь</h5></center>
+        <form id="form_input">
+            <label for="name">Имя <span>*</span></label><br>
+            <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+            <label for="name">Ваша почта <span>*</span></label><br>
+            <input type="text" placeholder="Введите email" name="email" id="email"><br>
+            <label for="name">Сообщение <span>*</span></label><br>
+            <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+            <div id="mess_send" class="btn">Отправить</div>
+        </form>
+    </div>
+
+    <div id="faq">
+        <div>
+            <span class="title">Оплата</span><br>
+            <span class="heading">Как проходит оплата?</span>
+            <p>Оплата при получении заказа либо безналичный расчет</p>
+        </div>  
+        <div>
+            <span class="title">Информация</span><br>
+            <span class="heading">Что можно заказать?</span>
+            <p>Все что есть на сайте есть в наличии</p>
+        </div>
+        <div>
+            <span class="title">Гарантия</span><br>
+            <span class="heading">Какие гарантии что мясо свежее и здоровое?</span>
+            <p>Мы ежемесячно проходим проверку с соответствующими инстанциями</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll", function () {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class", "fixed");
+        });
+    </script>
+</body>
+</html>
